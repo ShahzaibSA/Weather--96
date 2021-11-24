@@ -35,8 +35,8 @@ weatherForm.addEventListener('submit', (e) => {
         showWind.innerHTML = `Loading`
         // showForecastIcon.innerHTML = `Loading`
 
-        const url = `http://localhost:5000/weather/?address=${weatherInput.value}`;
-        // const url = `/weather/?address=${weatherInput.value}`;
+        // const url = `http://localhost:5000/weather/?address=${weatherInput.value}`;
+        const url = `/weather/?address=${weatherInput.value}`;
         fetch(url).then(response => {
             response.json().then(data => {
                 if (data.error) {
