@@ -50,6 +50,9 @@ weatherForm.addEventListener('submit', (e) => {
                     showFeels.innerHTML = `${data.feels_like}<sup> o</sup>C`;
                     showWind.textContent = `${data.wind} km/h`
                     showForecastIcon.style.display = 'block';
+
+                    weatherInput.value = '';
+                    weatherInput.focus();
                 }
             });
         });
