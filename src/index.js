@@ -27,18 +27,16 @@ app.get('/weather', (req, res) => {
     if (!address) {
         return res.send({ error: 'Please enter your address!' });
     }
-    forecast(address, (error, { country, place, weather, temperature, humidity, feels_like, icon, wind } = {}) => {
+    forecast(address, (error, { place, weather, temperature, humidity, feels_like, wind } = {}) => {
         if (error) {
             return res.send({ error })
         }
         res.send({
-            country,
             place,
             weather,
             temperature,
             humidity,
             feels_like,
-            icon,
             wind
         });
     })
