@@ -7,8 +7,8 @@ const forecast = (location, callback) => {
     request({ url, json: true }, (error, { body } = {}) => {
         if (error) {
             callback("Internet Failure", undefined);
-        } else if (body.success === false) {
-            callback("Location Not Found", undefined);
+        } else if (body.cod == '404') {
+            callback(body.message ? body.message : "Location Not Found", undefined);
         } else {
             const data = {
                 //! WeatherStack Api data
